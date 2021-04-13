@@ -1,0 +1,23 @@
+body {
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #422200;
+    padding: 0 10px
+}
+
+@media (max-width: 650px) {
+    body {
+        margin: 40px;
+    }
+    h1 {
+        position: absolute;
+    }
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2
+}
