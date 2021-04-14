@@ -1,0 +1,26 @@
+{
+  "name": "secqa-smoke-test",
+  "version": "1.0.0",
+  "description": "files to fix",
+  "main": "script.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonborer/secqa-lesson-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonborer/secqa-lesson-1/issues"
+  },
+  "homepage": "https://github.com/simonborer/secqa-lesson-1#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "differencify": "^1.5.5",
+    "express": "^4.17.1",
+    "mocha": "^8.3.2"
+  }
+}
