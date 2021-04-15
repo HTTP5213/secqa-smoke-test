@@ -10,23 +10,9 @@ const port = 4321;
 
 app.use(express.static('public'));
 
-const server = app.listen(port, () => console.log(`Server listening on port: ${port}`));
+const server = app.listen(port, () => console.log(`VR Server listening on port: ${port}`));
 
 module.exports = (async () => {
-  // const result = await differencify
-  //   .init({})
-  //   .launch()
-  //   .newPage()
-  //   .setViewport({ width: 599, height: 600 })
-  //   .goto('http://localhost:4321')
-  //   .waitFor(1000)
-  //   .screenshot()
-  //   .toMatchSnapshot()
-  //   .result((result) => {
-  //    	return result;
-  //   })
-  //   .close()
-  //   .end();
   const target = differencify.init({ chain: false });
   await target.launch();
   const page = await target.newPage();
