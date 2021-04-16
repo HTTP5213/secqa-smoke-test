@@ -1,26 +1,23 @@
-// wait, so do we need puppeteer?
-const puppeteer = require('puppeteer');
-const lighthouse = require('lighthouse');
-const { URL } = require('url');
-const express = require('express');
-const app = express();
-const port = 4321;
+const puppeteer = require('puppeteer'),
+    lighthouse = require('lighthouse'),
+    { URL } = require('url'),
+    express = require('express'),
+    app = express(),
+    port = 4321;
 
 app.use(express.static('public'));
 
 const server = app.listen(port, () => console.log(`LH Server listening on port: ${port}`));
 
 module.exports = (async () => {
-    const url = 'http://localhost:4321';
+    const url = 'http://localhost:' + port;
     const browser = await puppeteer.launch();
 
     const { lhr } = await lighthouse(url, {
         port: (new URL(browser.wsEndpoint())).port,
         output: 'json',
-        onlyCategories: ['performance', 'accessibility', 'seo', 'best-practices']
+        onlyCategories: ['performance', 'seo', 'best-practices']
     });
-
-    // const result = Object.values(lhr.categories).map(c => c.score).join(', ');
 
     const structuredResultObj = {};
 

@@ -1,6 +1,6 @@
-const fet = require('node-fetch');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const fet = require('node-fetch'),
+    jsdom = require("jsdom"),
+    { JSDOM } = jsdom;
 
 module.exports = (async () => {
     const responseArray = [];

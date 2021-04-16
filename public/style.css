@@ -11,9 +11,13 @@ body {
     body {
         margin: 40px;
     }
-/*    h1 {
+    /**
+        I bet things would fall right into place
+        if this headline wasn't so absolutist.
+    **/
+    h1 {
         position: absolute;
-    }*/
+    }
 }
 
 h1,

@@ -6,7 +6,7 @@ const express = require('express'),
 	});
 
 const app = express();
-const port = 4321;
+const port = 4324;
 
 app.use(express.static('public'));
 
@@ -16,11 +16,11 @@ module.exports = (async () => {
   const target = differencify.init({ chain: false });
   await target.launch();
   const page = await target.newPage();
-  await page.setViewport({ width: 599, height: 600 })
-  await page.goto('http://localhost:4321')
+  await page.setViewport({ width: 599, height: 600 });
+  await page.goto('http://localhost:' + port);
   await page.waitFor(1000);
   const image = await page.screenshot();
-  const result = await target.toMatchSnapshot(image)
+  const result = await target.toMatchSnapshot(image);
   await page.close();
   await target.close();
   server.close();
