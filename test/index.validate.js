@@ -6,7 +6,7 @@ const port = 4323;
 
 app.use(express.static('public'));
 
-const server = app.listen(port, () => console.log(`LH Server listening on port: ${port}`));
+const server = app.listen(port, () => console.log(`VL Server listening on port: ${port}`));
 
 module.exports = (async () => {
     const localFile = 'http://localhost:' + port;

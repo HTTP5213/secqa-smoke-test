@@ -6,7 +6,7 @@ chai.use(chaiAsPromised);
 
 const expect = chai.expect,
     axe = require('./index.axe'),
-    vis = require('./index.visual-regression.test'),
+    vis = require('./index.visual-regression'),
     lght = require('./index.lighthouse'),
     val = require('./index.validate'),
     links = require('./index.links'),
