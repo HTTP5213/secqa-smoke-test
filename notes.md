@@ -1,2 +1,0 @@
-- remove assertion error without removing assertion
-- 
