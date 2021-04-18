@@ -15,6 +15,7 @@ const expect = chai.expect,
 
 describe('index.html', function() {
     describe('Responsiveness', function() {
+        this.timeout(8000);
         it('should match existing screenshot for media viewport below 600px', async function() {
             return expect(await vis()).to.be.true;
         });
