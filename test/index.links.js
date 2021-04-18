@@ -2,7 +2,7 @@ const fet = require('node-fetch'),
     jsdom = require("jsdom"),
     { JSDOM } = jsdom;
 
-module.exports = (async () => {
+module.exports = links = async () => {
     const responseArray = [];
     const dom = await JSDOM.fromFile("./public/index.html", {});
 
@@ -29,4 +29,4 @@ module.exports = (async () => {
     const noBrokenLinks = responseArray.every(resp => resp.statusCode < 400);
 
     return noBrokenLinks;
-})();
+};

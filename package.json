@@ -4,7 +4,16 @@
   "description": "files to fix",
   "main": "script.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-responsiveness": "mocha --grep 'Responsiveness'",
+    "test-performance": "mocha --grep 'Performance metrics'",
+    "test-best-practices": "mocha --grep 'Best practices metrics'",
+    "test-seo": "mocha --grep 'SEO metrics'",
+    "test-a11y": "mocha --grep 'Accessibility'",
+    "test-html": "mocha --grep 'HTML validation'",
+    "test-links": "mocha --grep 'Link validation'",
+    "test-email": "mocha --grep 'Front-end form validation'",
+    "test-assert": "mocha --grep 'Errors and failed assertions'"
   },
   "repository": {
     "type": "git",

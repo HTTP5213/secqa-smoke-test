@@ -4,24 +4,24 @@ const express = require('express'),
 
 const port = 4323;
 
-app.use(express.static('public'));
 
-const server = app.listen(port, () => console.log(`VL Server listening on port: ${port}`));
+module.exports = val = async () => {
+    app.use(express.static('public'));
 
-module.exports = (async () => {
+    const server = app.listen(port, () => console.log(`VL Server listening on port: ${port}`));
     const localFile = 'http://localhost:' + port;
     const options = {
         url: localFile,
         isLocal: true,
         format: 'json'
     };
-    
+
     const result = await validator(options);
 
     const errArray = result.messages.filter(function(el) {
         return el.type === 'error';
     });
 
-    server.close();
+    await server.close();
     return errArray;
-})();
+};

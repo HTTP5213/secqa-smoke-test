@@ -4,15 +4,13 @@ const express = require('express'),
 		mismatchThreshold: 0.01,
         imageSnapshotPath: 'test/differencify_reports/'
 	});
-
 const app = express();
 const port = 4324;
 
-app.use(express.static('public'));
 
-const server = app.listen(port, () => console.log(`VR Server listening on port: ${port}`));
-
-module.exports = (async () => {
+module.exports = vis = async () => {
+  app.use(express.static('public'));
+  const server = app.listen(port, () => console.log(`VR Server listening on port: ${port}`));
   const target = differencify.init({ chain: false });
   await target.launch();
   const page = await target.newPage();
@@ -23,6 +21,6 @@ module.exports = (async () => {
   const result = await target.toMatchSnapshot(image);
   await page.close();
   await target.close();
-  server.close();
+  await server.close();
   return result;
-})();
+};

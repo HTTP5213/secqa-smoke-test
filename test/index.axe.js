@@ -4,12 +4,10 @@ const express = require('express');
 const app = express();
 const port = 4322;
 
-app.use(express.static('public'));
 
-const server = app.listen(port, () => console.log(`AX Server listening on port: ${port}`));
-
-module.exports = (async () => {
-
+module.exports = ax = async () => {
+    app.use(express.static('public'));
+    const server = app.listen(port, () => console.log(`AX Server listening on port: ${port}`));
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto('http://localhost:' + port);
@@ -24,7 +22,7 @@ module.exports = (async () => {
 
     await page.close();
     await browser.close();
-    server.close();
+    await server.close();
     
     return result;
-})();
+};

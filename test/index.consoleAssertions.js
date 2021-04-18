@@ -3,11 +3,11 @@ const puppeteer = require('puppeteer'),
     app = express(),
     port = 4325;
 
-app.use(express.static('public'));
 
-const server = app.listen(port, () => console.log(`AR Server listening on port: ${port}`));
+module.exports = asrt = async () => {
+    app.use(express.static('public'));
 
-module.exports = (async () => {
+    const server = app.listen(port, () => console.log(`AR Server listening on port: ${port}`));
     const url = 'http://localhost:' + port;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -18,12 +18,12 @@ module.exports = (async () => {
             resultArr.push(e);
         }
     });
-    page.on("pageerror", function(err) {  
+    page.on("pageerror", function(err) {
         resultArr.push(err);
     });
     await page.goto('http://localhost:' + port);
     await page.close();
     await browser.close();
-    server.close();
+    await server.close();
     return resultArr;
-})();
+};
