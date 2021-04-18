@@ -18,10 +18,12 @@ To start a local server, you must have PHP (v5.4+) or Python installed on your s
 
 To verify that these are installed, open your command prompt (Windows) or terminal (Mac) and verify the version:
 
-PHP ```php
+PHP 
+```php
 php -v
 ```
-Python ```python
+Python 
+```python
 python -V
 ```
 
@@ -29,21 +31,26 @@ Both of these languages come installed on Macs. Windows users can install PHP by
 
 In your terminal, change directories into the `public` folder of this project.
 
-Windows ```powershell
+Windows 
+```powershell
 Set-Location -Path /path/to/public
 ```
-Mac ```bash
+Mac 
+```bash
 cd /path/to/public
 ```
 
 Start the web server with the following command:
-PHP ```php
+PHP 
+```php
 -S localhost:8000
 ```
-Python (v2) ```python
+Python (v2) 
+```python
 python -m SimpleHTTPServer
 ```
-Python (v3) ```python3
+Python (v3) 
+```python3
 python3 -m http.server
 ```
 
