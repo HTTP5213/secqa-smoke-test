@@ -21,7 +21,7 @@ describe('index.html', function() {
     //     });
     // });
     describe('Lighthouse metrics', function() {
-        this.timeout(8000);
+        this.timeout(60000);
         describe('Performance metrics', function() {
             it('should get a perfect score in lighthouse performance metrics', async function() {
                 return expect(await lght.performance()).to.have.property('performance').to.equal(1);
