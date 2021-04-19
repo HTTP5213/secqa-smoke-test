@@ -2,16 +2,17 @@
 
 Use your browser, dev tools, and browser extensions to accomplish the following:
 
-- Fix responsive layout (Use the responsive view in your browser dev tools).
 - Detect broken links (manually or using an extension) [Chrome extension](https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf)<sup>[1](#myfootnote1)</sup> [Firefox extension](https://addons.mozilla.org/en-CA/firefox/addon/simple-link-checker/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)<sup>[1](#myfootnote1)</sup>.
 - Fix any accessibility errors identified by aXe [Chrome extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search).
 - Score 100 on Lighthouse metrics for performance, best practices and SEO. Comes pre-installed with Chrome dev tools<sup>[1](#myfootnote1)</sup><sup>[2](#myfootnote1)</sup>. 
 - Validate your HTML document according to [W3C specifications](https://validator.nu/)
 - Fix any errors logged with `console.assert()`.
 - Make sure that submitting the form without required fields alerts the user.
+- ~~Fix responsive layout (Use the responsive view in your browser dev tools).~~
+
 <hr>
 
-<a name="myfootnote1">1</a>: Requires a local server.
+<a name="myfootnote1">1</a>: A few of these tools can only analyze pages that are being *served*. They'll work on any pages on the internet, but if you want to test html files that are just sitting on your computer, you'll need to serve them with a local server.
 
 ## Local servers
 To start a local server, you must have PHP (v5.4+) or Python installed on your system. 
