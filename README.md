@@ -12,7 +12,12 @@ Use your browser, dev tools, and browser extensions to accomplish the following:
 
 <hr>
 
-<a name="myfootnote1">1</a>: A few of these tools can only analyze pages that are being *served*. They'll work on any pages on the internet, but if you want to test html files that are just sitting on your computer, you'll need to serve them with a local server.
+<a name="myfootnote1">1</a>: A few of these tools can only analyze pages that are being *served*. They'll work on any pages on the internet, but if you want to test html files that are just sitting on your computer, you'll need to serve them with a local server. See the [notes](#local-servers) below on how to accomplish this.
+
+<a name="myfootnote2">2</a>: You can run Lighthouse audits on live web pages via [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) or [web.dev](https://web.dev/measure/), but neither seems to support static pages or pages served via local server.
+
+<hr>
+
 
 ## Local servers
 To start a local server, you must have PHP (v5.4+) or Python installed on your system. 
@@ -56,5 +61,3 @@ python3 -m http.server
 ```
 
 After running any of the above commands, you can go to [http://localhost:8000](http://localhost:8000) in a browser and see the `index.html` file served from the public server.
-
-<a name="myfootnote2">2</a>: You can run Lighthouse audits on live web pages via [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) or [web.dev](https://web.dev/measure/), but neither seems to support static pages or pages served via local server.
