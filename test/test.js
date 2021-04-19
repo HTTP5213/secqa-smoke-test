@@ -6,7 +6,7 @@ chai.use(chaiAsPromised);
 
 const expect = chai.expect,
     {axe} = require('./index.axe'),
-    vis = require('./index.visual-regression'),
+    // vis = require('./index.visual-regression'),
     lght = require('./index.lighthouse'),
     val = require('./index.validate'),
     links = require('./index.links'),
@@ -14,12 +14,12 @@ const expect = chai.expect,
     asrt = require('./index.consoleAssertions');
 
 describe('index.html', function() {
-    describe('Responsiveness', function() {
-        this.timeout(8000);
-        it('should match existing screenshot for media viewport below 600px', async function() {
-            return expect(await vis()).to.be.true;
-        });
-    });
+    // describe('Responsiveness', function() {
+    //     this.timeout(8000);
+    //     it('should match existing screenshot for media viewport below 600px', async function() {
+    //         return expect(await vis()).to.be.true;
+    //     });
+    // });
     describe('Lighthouse metrics', function() {
         this.timeout(8000);
         describe('Performance metrics', function() {
