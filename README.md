@@ -47,9 +47,10 @@ cd /path/to/public
 ```
 
 Start the web server with the following command:
+
 PHP 
 ```php
--S localhost:8000
+php -S localhost:8000
 ```
 Python (v2) 
 ```python
