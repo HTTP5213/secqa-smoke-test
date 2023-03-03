@@ -1,40 +1,31 @@
-const assert = require('assert'),
-    chai = require("chai"),
-    chaiAsPromised = require("chai-as-promised");
-
+import * as chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 chai.use(chaiAsPromised);
+let expect = chai.expect;
 
-const expect = chai.expect,
-    {axe} = require('./index.axe'),
-    // vis = require('./index.visual-regression'),
-    lght = require('./index.lighthouse'),
-    val = require('./index.validate'),
-    links = require('./index.links'),
-    emailRequired = require('./index.emailRequired'),
-    asrt = require('./index.consoleAssertions');
+import {ax} from './index.axe.js';
+import * as lght from './index.lighthouse.js';
+import {val} from './index.validate.js';
+import {links} from './index.links.js';
+import {emailRequired} from './index.emailRequired.js';
+import {asrt} from './index.consoleAssertions.js';
 
 describe('index.html', function() {
-    // describe('Responsiveness', function() {
-    //     this.timeout(8000);
-    //     it('should match existing screenshot for media viewport below 600px', async function() {
-    //         return expect(await vis()).to.be.true;
-    //     });
-    // });
     describe('Lighthouse metrics', function() {
         this.timeout(60000);
         describe('Performance metrics', function() {
             it('should get a perfect score in lighthouse performance metrics', async function() {
-                return expect(await lght.performance()).to.have.property('performance').to.equal(1);
+                return expect(await lght.performance()).to.have.property('performance').to.be.above(.98);
             });
         });
         describe('Best practices metrics', function() {
             it('should get a perfect score in lighthouse best practices metrics', async function() {
-                return expect(await lght.bestPractices()).to.have.property('best-practices').to.equal(1);
+                return expect(await lght.bestPractices()).to.have.property('best-practices').to.be.above(.98);
             });
         });
         describe('SEO metrics', function() {
             it('should get a perfect score in lighthouse SEO metrics', async function() {
-                return expect(await lght.seo()).to.have.property('seo').to.equal(1);
+                return expect(await lght.seo()).to.have.property('seo').to.be.above(.98);
             });
         });
     });

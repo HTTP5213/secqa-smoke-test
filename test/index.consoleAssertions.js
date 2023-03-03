@@ -1,10 +1,10 @@
-const puppeteer = require('puppeteer'),
-    express = require('express'),
-    app = express(),
+import express from 'express';
+import puppeteer from 'puppeteer';
+const app = express(),
     port = 4325;
 
 
-module.exports = asrt = async () => {
+export async function asrt() {
     app.use(express.static('public'));
 
     const server = app.listen(port, () => console.log(`AR Server listening on port: ${port}`));
@@ -14,6 +14,7 @@ module.exports = asrt = async () => {
     const resultArr = [];
     page.on('console', async e => {
         const args = await Promise.all(e.args().map(a => a.jsonValue()));
+        console.log(args);
         if (e.type() === ('assert' || 'error')) {
             resultArr.push(e);
         }

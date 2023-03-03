@@ -1,11 +1,11 @@
-const express = require('express'),
-    app = express(),
-    validator = require('html-validator');
+import express from 'express';
+import validator from 'html-validator';
 
+const app = express();
 const port = 4323;
 
 
-module.exports = val = async () => {
+export async function val() {
     app.use(express.static('public'));
 
     const server = app.listen(port, () => console.log(`VL Server listening on port: ${port}`));

@@ -1,11 +1,11 @@
-const puppeteer = require('puppeteer');
-const axe = require('axe-core');
-const express = require('express');
+import express from 'express';
+import puppeteer from 'puppeteer';
+import axe from 'axe-core';
+
 const app = express();
 const port = 4322;
 
-
-module.exports = ax = async () => {
+export async function ax() {
     app.use(express.static('public'));
     const server = app.listen(port, () => console.log(`AX Server listening on port: ${port}`));
     const browser = await puppeteer.launch();
@@ -13,7 +13,7 @@ module.exports = ax = async () => {
     await page.goto('http://localhost:' + port);
 
     await page.addScriptTag({
-        path: require.resolve('axe-core')
+        path: 'node_modules/axe-core/axe.min.js'
     });
 
     const result = await page.evaluate(async () => {
@@ -23,6 +23,6 @@ module.exports = ax = async () => {
     await page.close();
     await browser.close();
     await server.close();
-    
+
     return result;
-};
+}

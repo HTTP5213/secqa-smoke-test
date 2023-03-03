@@ -1,8 +1,7 @@
-const fet = require('node-fetch'),
-    jsdom = require("jsdom"),
-    { JSDOM } = jsdom;
+import fetch from 'node-fetch';
+import { JSDOM } from 'jsdom';
 
-module.exports = links = async () => {
+export async function links() {
     const responseArray = [];
     const dom = await JSDOM.fromFile("./public/index.html", {});
 
@@ -15,7 +14,7 @@ module.exports = links = async () => {
 
         const getData = async (url) => {
             try {
-                const response = await fet(url);
+                const response = await fetch(url);
                 const res = await response;
                 aObj.statusCode = res.status;
             } catch (error) {
