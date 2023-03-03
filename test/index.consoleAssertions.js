@@ -12,7 +12,7 @@ export async function asrt() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     const resultArr = [];
-    page.on('console', async e => {
+    page.on('load', async e => {
         const args = await Promise.all(e.args().map(a => a.jsonValue()));
         console.log(args);
         if (e.type() === ('assert' || 'error')) {
